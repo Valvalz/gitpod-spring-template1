@@ -34,7 +34,7 @@ public class JogoContoller {
     public String insert(
         @RequestParam("titulo") String titulo,
         @RequestParam("isbn") String isbn) {
-        Jogo jogo = new Jogo(0);
+        Jogo jogo = new Jogo(1);
         jogo.setTitulo(titulo);
         jogo.setIsbn(isbn);
 
