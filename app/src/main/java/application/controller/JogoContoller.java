@@ -21,7 +21,7 @@ public class JogoContoller {
 
     @RequestMapping("/list")
     public String list(Model model) {
-        model.addAttribute("jogo", JogoRepository.findAll());
+        model.addAttribute("jogo", jogoRepo.findAll());
         return "/jogo/list";
     }
 
@@ -34,7 +34,7 @@ public class JogoContoller {
     public String insert(
         @RequestParam("titulo") String titulo,
         @RequestParam("isbn") String isbn) {
-        Jogo jogo = new Jogo();
+        Jogo jogo = new Jogo(0);
         jogo.setTitulo(titulo);
         jogo.setIsbn(isbn);
 
@@ -47,7 +47,7 @@ public class JogoContoller {
         Optional<Jogo> jogo = jogoRepo.findById(id);
 
         if(jogo.isPresent()) {
-            model.addAttribute("livro", jogo.get());
+            model.addAttribute("jogo", jogo.get());
             return "/jogo/update";
         }
 
@@ -63,24 +63,19 @@ public class JogoContoller {
 
         if(jogo.isPresent()) {
             jogo.get().setTitulo(titulo);
-            jogoRepo.get().setIsbn(isbn);
+            jogo.get().setIsbn(isbn);
             jogoRepo.save(jogo.get());
         }
 
         return "redirect:/jogo/list";
     }
 
-    /**
- * @param model
- * @param id
- * @return
- */
-@RequestMapping("/delete")
+    @RequestMapping("/delete")
     public String delete(Model model, @RequestParam("id") int id) {
         Optional<Jogo> jogo = jogoRepo.findById(id);
 
         if(jogo.isPresent()) {
-            model.addAttribute("livro", jogo.get());
+            model.addAttribute("jogo", jogo.get());
             return "/jogo/delete";
         }
 
@@ -93,11 +88,5 @@ public class JogoContoller {
 
         return "redirect:/jogo/list";
     }
-}
-
-
-
-
-
     
-
+}

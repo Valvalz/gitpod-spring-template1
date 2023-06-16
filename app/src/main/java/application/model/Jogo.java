@@ -1,20 +1,17 @@
 package application.model;
 
-
-
 @Entity
-@Table(name="jogos")
-
+@Table(name="jogo")
 public class Jogo {
-
-    @Override
-    public String toString() {
-        return "Jogo []";
-    }
-
     
+    /**
+     *
+     */
     
     private int id;
+    public Jogo(int id) {
+        this.id = id;
+    }
     private String titulo;
     private String isbn;
 
@@ -36,7 +33,4 @@ public class Jogo {
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
-
-  
-  
 }

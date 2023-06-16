@@ -1,5 +1,5 @@
 package application.model;
 
-public interface CrudRepository<T1, T2> {
+public class CrudRepository<T1, T2> {
 
 }

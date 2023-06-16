@@ -4,12 +4,12 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
-        <title>JOGOS</title>
+        <title>jogos</title>
         <link href="/css/bootstrap.min.css" rel="stylesheet" />
     </head>
     <body>
         <div class="container">
-        <h1>JOGOS</h1>
+        <h1>jogos</h1>
             <a href="/jogo/insert" class="btn btn-primary">Novo Jogo</a>
             <table class="table">
                 <tr>
@@ -18,7 +18,7 @@
                     <th>ISBN</th>
                     <th>&nbsp;</th>
                 </tr>
-                <c:forEach var="item" items="${jogo}">
+                <c:forEach var="item" items="${jogos}">
                     <tr>
                         <td>${item.id}</td>
                         <td>${item.titulo}</td>

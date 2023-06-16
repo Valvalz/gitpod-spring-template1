@@ -2,18 +2,28 @@ package application.model;
 
 import java.util.Optional;
 
-public interface JogoRepository extends CrudRepository<Jogo, Integer> {
+public class JogoRepository extends CrudRepository<Jogo, Integer> {
 
-    static Object findAll() {
+    public Object findAll() {
         return null;
     }
 
-    void save(Jogo jogo);
+    public Optional<Jogo> findById(int id) {
+        return null;
+    }
 
-    Optional<Jogo> findById(int id);
+    public void save(Jogo jogo) {
+    }
 
-    Jogo get();
+    public void deleteById(int id) {
+    }
 
-    void deleteById(int id);
     
-}
+    }
+    
+
+
+
+
+
+

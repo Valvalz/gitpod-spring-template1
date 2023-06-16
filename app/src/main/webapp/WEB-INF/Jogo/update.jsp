@@ -3,7 +3,7 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
-        <title>Editar jogo</title>
+        <title>Editar jogo/title>
         <link href="/css/bootstrap.min.css" rel="stylesheet" />
     </head>
     <body>
@@ -13,13 +13,12 @@
                 <input type="hidden" name="id" value="${jogo.id}" />
                 <div class="form-group">
                     <label for="titulo">Título:</label>
-                    <input type="text" name="titulo" class="form-control" value="${jogotitulo}" />
-
-                    <div class="form-group">
-                        <label for="isbn">ISBN:</label>
-                        <input type="text" name="isbn" class="form-control" value="${livro.isbn}" />
-                    </div>
-                
+                    <input type="text" name="titulo" class="form-control" value="${jogo.titulo}" />
+                </div>
+                <div class="form-group">
+                    <label for="isbn">ISBN:</label>
+                    <input type="text" name="isbn" class="form-control" value="${jogo.isbn}" />
+                </div>
                 <br />
                 <a href="/jogo/list" class="btn btn-primary" >Voltar</a>
                 <button type="submit" class="btn btn-success">Salvar</button>
